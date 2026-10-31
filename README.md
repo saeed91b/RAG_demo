@@ -49,3 +49,14 @@ text, and sends the context to a Gemini model to generate an answer.
 
 Open the local Streamlit URL shown in the terminal, upload a PDF smaller than
 10 MB, and ask questions about it. The API listens on `http://localhost:8000`.
+
+## Run with Docker
+
+Create a `.env` file from `.env.example` and set your `GOOGLE_API_KEY`, then build and run the app from the project root:
+
+```powershell
+docker build -t rag-demo .
+docker run --rm --env-file .env -p 8501:8501 -p 8000:8000 rag-demo
+```
+
+Open `http://localhost:8501` to use the app.
